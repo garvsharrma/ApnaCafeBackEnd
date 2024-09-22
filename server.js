@@ -99,7 +99,7 @@ app.post('/api/contact', async (req, res) => {
 });
 
 app.get('/api/test-email', (req, res) => {
-  const testEmail = 'garvsharma011@gmail.com'; // Replace with your email for testing
+  const testEmail = 'garvsharma011@gmail.com'; 
   const testOrderId = '12345';
   const testAmount = '150.0';
   console.log("Sending test email....");
@@ -109,10 +109,10 @@ app.get('/api/test-email', (req, res) => {
 
 // PostgreSQL connection
 const pool = new Pool({
-  user: 'postgres', // replace with your PostgreSQL username
-  host: 'localhost',
-  database: 'ApnaCafe',
-  password: '@garv5670?', // replace with your PostgreSQL password
+  user: 'garvsharma', 
+  host: 'dpg-crnui9ij1k6c739cjtig-a',
+  database: 'apna_cafe_db',
+  password: 'bOROg43ERp1gU5Q7bJJBiFNwzwXQy7XW', 
   port: 5432,
 });
 
