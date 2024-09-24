@@ -181,7 +181,7 @@ app.post('/api/initiate-payment', async (req, res) => {
         },
         order_note: 'Order Payment',
         order_meta: {
-          return_url: `http://localhost:5000/payment-status?order_id=${orderId}`
+          return_url: `https://apnacafebackend.onrender.com/payment-status?order_id=${orderId}`
         },
         version: '2023-08-01'
       },
@@ -210,6 +210,20 @@ app.post('/api/initiate-payment', async (req, res) => {
   }
 });
 
+app.get('/payment-status', async (req, res) => {
+  const { order_id } = req.query;
+
+  try {
+    // Add logic to check payment status (e.g., from Cashfree)
+    console.log(`Payment successful for order ID: ${order_id}`);
+    
+    // Redirect to the frontend success page (replace with the correct frontend URL)
+    res.redirect('https://garvsharrma.github.io/payment-success');
+  } catch (error) {
+    console.error('Error handling payment status:', error);
+    res.status(500).json({ error: 'Failed to process payment status' });
+  }
+});
 
 app.post('/api/payment-success', async (req, res) => {
   console.log("Payment-Sucess");
