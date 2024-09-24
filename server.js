@@ -181,7 +181,7 @@ app.post('/api/initiate-payment', async (req, res) => {
         },
         order_note: 'Order Payment',
         order_meta: {
-          return_url: `https://apnacafebackend.onrender.com/payment-status?order_id=${orderId}`
+          return_url: `https://apnacafebackend.onrender.com/payment-success?order_id=${orderId}`
         },
         version: '2023-08-01'
       },
