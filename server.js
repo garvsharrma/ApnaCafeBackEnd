@@ -114,10 +114,11 @@ app.get('/api/test-email', (req, res) => {
 // PostgreSQL connection
 const pool = new Pool({
   user: 'garvsharma', 
-  host: 'dpg-crnui9ij1k6c739cjtig-a',
+  host: 'pghero-dpg-crnui9ij1k6c739cjtig-a.onrender.com',
   database: 'apna_cafe_db',
   password: 'bOROg43ERp1gU5Q7bJJBiFNwzwXQy7XW', 
   port: 5432,
+  ssl: { rejectUnauthorized: false }  // Add this line for Render PostgreSQL
 });
 
 // Route to handle order creation
